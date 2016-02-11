@@ -6,11 +6,18 @@ $(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 
 LOCAL_PATH := device/huawei/hi6210sft
 
+# Ramdisk
+
 # Build and run only ART
 PRODUCT_RUNTIMES := runtime_libart_default
 	
 # Audio
 PRODUCT_PACKAGES += audio.a2dp.default
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
+	
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Needed to sync the system clock with the RTC clock
 PRODUCT_PACKAGES += hwclock
@@ -41,11 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
 
 PRODUCT_PACKAGES += libGLES_android
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
-	
-USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 PRODUCT_COPY_FILES += \

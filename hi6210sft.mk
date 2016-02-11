@@ -84,8 +84,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_p8litekirin
-PRODUCT_DEVICE := p8litekirin
+PRODUCT_NAME := full_hi6210sft
+PRODUCT_DEVICE := hi6210sft
 
 $(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)

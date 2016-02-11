@@ -5,7 +5,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_RELEASE_NAME := p8litekirin
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/p8litekirin/hi6210sft.mk)
+$(call inherit-product, device/huawei/hi6210sft/hi6210sft.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hi6210sft

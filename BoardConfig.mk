@@ -79,7 +79,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/huawei/p8litekirin/sepolicy
+    device/huawei/hi6210sft/sepolicy
 
 BOARD_SEPOLICY_UNION += \
 	file.te \

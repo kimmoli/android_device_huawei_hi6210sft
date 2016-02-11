@@ -16,16 +16,16 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-        device/huawei/p8litekirin/bluetooth/TIInit_11.8.32.bts:system/etc/firmware/ti-connectivity/TIInit_11.8.32.bts \
-        device/huawei/p8litekirin/bluetooth/TIInit_11.8.32.bts:system/etc/firmware/TIInit_11.8.32.bts \
-        device/huawei/p8litekirin/bluetooth/wl18xx-fw-4.bin:system/etc/firmware/ti-connectivity/wl18xx-fw-4.bin \
+    $(LOCAL_PATH)/bluetooth/TIInit_11.8.32.bts:system/etc/firmware/ti-connectivity/TIInit_11.8.32.bts \
+    $(LOCAL_PATH)/bluetooth/TIInit_11.8.32.bts:system/etc/firmware/TIInit_11.8.32.bts \
+    $(LOCAL_PATH)/bluetooth/wl18xx-fw-4.bin:system/etc/firmware/ti-connectivity/wl18xx-fw-4.bin \
 		
 $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)		
 	
 # Media
 PRODUCT_COPY_FILES += \
-	device/huawei/p8litekirin/media/media_codecs.xml:system/etc/media_codecs.xml \
-	device/huawei/p8litekirin/media/media_profiles.xml:system/etc/media_profiles.xml
+	$(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
+	$(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

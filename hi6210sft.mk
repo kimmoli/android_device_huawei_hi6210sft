@@ -1,8 +1,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/huawei/p8litekirin/p8litekirin-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 
-#DEVICE_PACKAGE_OVERLAYS += device/huawei/p8litekirin/overlay
+#DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
 LOCAL_PATH := device/huawei/p8litekirin
 	

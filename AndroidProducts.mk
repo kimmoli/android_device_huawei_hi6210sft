@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_p8litekirin.mk
+    $(LOCAL_DIR)/hi6210sft.mk

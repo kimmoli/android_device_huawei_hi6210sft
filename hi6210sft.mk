@@ -5,6 +5,9 @@ $(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 #DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
 LOCAL_PATH := device/huawei/hi6210sft
+
+# Build and run only ART
+PRODUCT_RUNTIMES := runtime_libart_default
 	
 # Audio
 PRODUCT_PACKAGES += audio.a2dp.default

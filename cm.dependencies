@@ -1,0 +1,6 @@
+[
+	{
+		"repository": "android_kernel_huawei_hi6210sft",
+		"target_path": "kernel/huawei/hi6210sft"
+	}
+]

@@ -85,12 +85,3 @@ BOARD_SEPOLICY_UNION += \
 	file.te \
     genfs_contexts \
 	kernel.te
-
-# TWRP specific flags
-TW_NO_USB_STORAGE := true
-# if you dont want DEVICE_RESOLUTION use this
-# TW_THEME := portrait_mdpi
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
-TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
-TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/p8litekirin/graphics.c

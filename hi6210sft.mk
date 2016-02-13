@@ -8,7 +8,25 @@ LOCAL_PATH := device/huawei/hi6210sft
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/xxx:root/xxx
+    $(LOCAL_PATH)/ramdisk/init.audio.rc:root/init.audio.rc \
+    $(LOCAL_PATH)/ramdisk/init.chip.usb.rc:root/init.chip.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.connectivity.bcm43xx.rc:root/init.connectivity.bcm43xx.rc \
+    $(LOCAL_PATH)/ramdisk/init.connectivity.hi110x.rc:root/init.connectivity.hi110x.rc \
+    $(LOCAL_PATH)/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
+    $(LOCAL_PATH)/ramdisk/init.device.rc:root/init.device.rc \
+    $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
+    $(LOCAL_PATH)/ramdisk/init.hi6210sft.rc:root/init.hi6210sft.rc \
+    $(LOCAL_PATH)/ramdisk/init.manufacture.rc:root/init.manufacture.rc \
+    $(LOCAL_PATH)/ramdisk/init.platform.rc:root/init.platform.rc \
+    $(LOCAL_PATH)/ramdisk/init.protocol.rc:root/init.protocol.rc \
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+    $(LOCAL_PATH)/ramdisk/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
+    $(LOCAL_PATH)/ramdisk/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
+    $(LOCAL_PATH)/ramdisk/init.tee.rc:root/init.tee.rc \
+    $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
+    $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
+    $(LOCAL_PATH)/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc 	
 	
 # Build and run only ART
 PRODUCT_RUNTIMES := runtime_libart_default

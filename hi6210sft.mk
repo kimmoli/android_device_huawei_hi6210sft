@@ -11,6 +11,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/fstab.hi6210sft:root/fstab.hi6210sft \
     $(LOCAL_PATH)/ramdisk/init.audio.rc:root/init.audio.rc \
     $(LOCAL_PATH)/ramdisk/init.chip.usb.rc:root/init.chip.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.connectivity.bcm43xx.rc:root/init.connectivity.bcm43xx.rc \

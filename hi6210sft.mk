@@ -7,7 +7,9 @@ $(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 LOCAL_PATH := device/huawei/hi6210sft
 
 # Ramdisk
-
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/xxx:root/xxx
+	
 # Build and run only ART
 PRODUCT_RUNTIMES := runtime_libart_default
 	

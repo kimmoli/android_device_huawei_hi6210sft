@@ -40,8 +40,6 @@ PRODUCT_PACKAGES += audio.a2dp.default
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 	
-USE_CUSTOM_AUDIO_POLICY := 1
-
 # Needed to sync the system clock with the RTC clock
 PRODUCT_PACKAGES += hwclock
 

@@ -50,6 +50,7 @@ USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
 
 # Kernel
+TARGET_PROVIDES_INIT_TARGET_RC := true
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048

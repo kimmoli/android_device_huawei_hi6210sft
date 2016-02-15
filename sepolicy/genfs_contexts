@@ -1,1 +1,1 @@
-genfscon configfs / u:object_r:configfs:s0
+# genfscon configfs / u:object_r:configfs:s0

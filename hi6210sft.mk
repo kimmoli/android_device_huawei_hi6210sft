@@ -13,6 +13,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Chromium
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so 
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

@@ -4,6 +4,15 @@ $(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 
 LOCAL_PATH := device/huawei/hi6210sft
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := device/huawei/hi6210sft/kernel
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

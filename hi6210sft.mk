@@ -134,6 +134,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
+# Copy hardware config file(s)
+PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
+                        device/HUAWEI/build/android.hardware.screen.xml:system/etc/permissions/android.hardware.screen.xml \
+                        frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+                        frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
+                        frameworks/native/data/etc/android.software.backup.xml:system/etc/permissions/android.software.backup.xml \
+                        frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml)
+
 
 $(call inherit-product, build/target/product/full.mk)
 

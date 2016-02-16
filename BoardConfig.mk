@@ -50,7 +50,7 @@ USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
 
 # Use this for build from source (need declares)
-TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
+TARGET_PREBUILT_KERNEL := device/huawei/p8litekirin/kernel
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
@@ -63,7 +63,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery Specific flags
-TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/fstab.hi620sft
+TARGET_RECOVERY_FSTAB := device/huawei/p8litekirin/ramdisk/fstab.hi620sft
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
@@ -75,7 +75,7 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/huawei/hi6210sft/sepolicy
+    device/huawei/p8litekirin/sepolicy
 
 BOARD_SEPOLICY_UNION += \
 	file.te \

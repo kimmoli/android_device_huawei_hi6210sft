@@ -89,6 +89,10 @@ PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64
 
 PRODUCT_PACKAGES += libGLES_android
 
+# Configs
+PRODUCT_COPY_FILES +=\
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf 
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/TIInit_11.8.32.bts:system/etc/firmware/ti-connectivity/TIInit_11.8.32.bts \

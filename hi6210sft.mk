@@ -41,13 +41,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-    $(LOCAL_PATH)/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc 
-
-# Add openssh support for remote debugging and job submission
-PRODUCT_PACKAGES += ssh sftp scp sshd ssh-keygen sshd_config start-ssh uim wpa_supplicant	
+    $(LOCAL_PATH)/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc 	
 	
-# Build and run only ART
-PRODUCT_RUNTIMES := runtime_libart_default
 	
 # Audio
 PRODUCT_PACKAGES += audio.a2dp.default
@@ -55,6 +50,15 @@ PRODUCT_PACKAGES += audio.a2dp.default
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 	
+# Add openssh support for remote debugging and job submission
+PRODUCT_PACKAGES += ssh sftp scp sshd ssh-keygen sshd_config start-ssh uim wpa_supplicant
+
+# Build and run only ART
+PRODUCT_RUNTIMES := runtime_libart_default
+
+# Build BT a2dp audio HAL
+PRODUCT_PACKAGES += audio.a2dp.default
+
 # Needed to sync the system clock with the RTC clock
 PRODUCT_PACKAGES += hwclock
 

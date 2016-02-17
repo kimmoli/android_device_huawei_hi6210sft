@@ -2,10 +2,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/p8litekirin-vendor.mk)
 
-LOCAL_PATH := device/huawei/p8litekirin
+LOCAL_PATH := device/huawei/hi6210sft
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/huawei/p8litekirin/kernel
+	LOCAL_KERNEL := device/huawei/hi6210sft/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -41,8 +41,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-    $(LOCAL_PATH)/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc 	
-	
+    $(LOCAL_PATH)/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc 		
 	
 # Audio
 PRODUCT_PACKAGES += audio.a2dp.default
@@ -51,32 +50,25 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 	
 # Add openssh support for remote debugging and job submission
-PRODUCT_PACKAGES += ssh sftp scp sshd ssh-keygen sshd_config start-ssh uim wpa_supplicant
-
-# Build and run only ART
-PRODUCT_RUNTIMES := runtime_libart_default
-
-# Build BT a2dp audio HAL
-PRODUCT_PACKAGES += audio.a2dp.default
-
-# Needed to sync the system clock with the RTC clock
-PRODUCT_PACKAGES += hwclock
-
-# Include USB speed switch App
-PRODUCT_PACKAGES += UsbSpeedSwitch
-
-# Build libion for new double-buffering HDLCD driver
-PRODUCT_PACKAGES += libion
-
-# Build gatord daemon for DS-5/Streamline
-PRODUCT_PACKAGES += gatord
-
-# Build gralloc for Juno
-PRODUCT_PACKAGES += gralloc.hikey
-
-# Include ION tests
-PRODUCT_PACKAGES += iontest \
-                    ion-unit-tests
+PRODUCT_PACKAGES += \
+	gatord \
+	gralloc.hikey \
+	hwclock \
+	ion-unit-tests \
+	iontest \
+	libion \
+	libGLES_android \
+	runtime_libart_default \
+	ssh \
+	sftp \
+	scp \
+	sshd \
+	ssh-keygen \
+	sshd_config \
+	start-ssh \
+	uim \
+	UsbSpeedSwitch \
+	wpa_supplicant
 
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
@@ -86,8 +78,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
          ro.adb.secure=0
 
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
-
-PRODUCT_PACKAGES += libGLES_android
 
 # Configs
 PRODUCT_COPY_FILES +=\
@@ -139,7 +129,6 @@ PRODUCT_COPY_FILES += \
 
 # Copy hardware config file(s)
 PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
-                        device/HUAWEI/build/android.hardware.screen.xml:system/etc/permissions/android.hardware.screen.xml \
                         frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
                         frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
                         frameworks/native/data/etc/android.software.backup.xml:system/etc/permissions/android.software.backup.xml \
@@ -149,8 +138,8 @@ PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_p8litekirin
-PRODUCT_DEVICE := p8litekirin
+PRODUCT_NAME := full_hi6210sft
+PRODUCT_DEVICE := hi6210sft
 
 $(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)

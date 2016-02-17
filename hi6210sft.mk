@@ -20,6 +20,12 @@ PRODUCT_COPY_FILES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Keys
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keys/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    $(LOCAL_PATH)/keys/Generic.kl:system/usr/keylayout/Generic.kl \
+    $(LOCAL_PATH)/keys/qwerty.kl:system/usr/keylayout/qwerty.kl
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.hi620sft:root/fstab.hi620sft \

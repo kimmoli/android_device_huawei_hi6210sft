@@ -1,3 +1,4 @@
+$(call inherit-product, build/target/product/full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -59,6 +60,12 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
+# Ramdisk
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/ramdisk/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
+	device/huawei/hi6210sft/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
+	device/huawei/hi6210sft/recovery.fstab:root/recovery.fstab
+
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -69,5 +76,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_p8litekirin
-PRODUCT_DEVICE := p8litekirin
+PRODUCT_NAME := full_hi6210sft
+PRODUCT_DEVICE := hi6210sft
+
+$(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)

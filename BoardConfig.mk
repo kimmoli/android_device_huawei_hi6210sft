@@ -51,7 +51,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-DEVICE_RESOLUTION := 720x1280
+TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/recovery.fstab
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 
@@ -63,10 +63,3 @@ BOARD_SEPOLICY_UNION += \
 	file.te \
     	genfs_contexts \
 	kernel.te
-
-# TWRP Recovery
-TW_NO_USB_STORAGE := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
-TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
-TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c

@@ -63,8 +63,8 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 # Ramdisk
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/ramdisk/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
-	device/huawei/hi6210sft/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
-	device/huawei/hi6210sft/recovery.fstab:root/recovery.fstab
+	device/huawei/hi6210sft/ramdisk/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
+	device/huawei/hi6210sft/ramdisk/recovery.fstab:root/recovery.fstab
 
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32

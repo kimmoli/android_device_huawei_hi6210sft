@@ -47,6 +47,15 @@ DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/huawei/hi6210sft/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	file.te \
+    	genfs_contexts \
+	kernel.te
+
 # TWRP Recovery
 TW_NO_USB_STORAGE := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"

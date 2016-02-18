@@ -1,7 +1,15 @@
 USE_CAMERA_STUB := true
+ANDROID_ENABLE_RENDERSCRIPT := true
 
 # inherit from the proprietary version
 -include vendor/huawei/hi6210sft/BoardConfigVendor.mk
+
+# 64 Bit Support
+ANDROID_64=true
+TARGET_USES_64_BIT_BINDER := true
+TARGET_USES_HISI_DTIMAGE := true
+TARGET_SUPPORTS_32_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Architecture
 TARGET_ARCH := arm64

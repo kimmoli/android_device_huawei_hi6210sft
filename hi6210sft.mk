@@ -14,6 +14,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Chromium
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 

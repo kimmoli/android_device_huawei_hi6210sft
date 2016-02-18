@@ -25,6 +25,9 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := kirin930
 TARGET_BOOTLOADER_BOARD_NAME := p8litekirin
 
+# Chromium
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
+
 # Kernel
 TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive

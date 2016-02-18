@@ -17,10 +17,6 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
-# TWRP Recovery
-PRODUCT_COPY_FILES += \
- 	device/huawei/hi6210sft/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_p8litekirin
 PRODUCT_DEVICE := p8litekirin

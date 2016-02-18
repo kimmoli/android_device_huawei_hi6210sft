@@ -14,9 +14,20 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Audio
+PRODUCT_PACKAGES += audio.a2dp.default
+
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/audio/audio_policy.conf:system/etc/audio_policy.conf
+
 # Chromium
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so
+
+# Media
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/media/media_codecs.xml:system/etc/media_codecs.xml \
+	device/huawei/hi6210sft/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay

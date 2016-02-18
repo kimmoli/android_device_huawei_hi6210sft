@@ -32,7 +32,29 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-        frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml 	
+        frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
+
+# Add openssh support for remote debugging and job submission
+PRODUCT_PACKAGES += \
+	gatord \
+	gralloc.hikey \
+	hwclock \
+	ion-unit-tests \
+	iontest \
+	libion \
+	libGLES_android \
+	libGLES_mali \
+	runtime_libart_default \
+	ssh \
+	sftp \
+	scp \
+	sshd \
+	ssh-keygen \
+	sshd_config \
+	start-ssh \
+	uim \
+	UsbSpeedSwitch \
+	wpa_supplicant 	
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay

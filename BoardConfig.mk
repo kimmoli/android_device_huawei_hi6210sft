@@ -37,6 +37,7 @@ TARGET_BOOTLOADER_BOARD_NAME := p8litekirin
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # Kernel
+TARGET_PROVIDES_INIT_RC := true
 TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x07478000
@@ -51,9 +52,15 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/recovery.fstab
+# TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/twrp/twrp.fstab
+DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
+TW_NO_USB_STORAGE := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
+TW_MAX_BRIGHTNESS := 255
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \

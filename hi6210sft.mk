@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
 	libion \
 	libGLES_android \
 	libGLES_mali \
+	libskia \
 	runtime_libart_default \
 	ssh \
 	sftp \

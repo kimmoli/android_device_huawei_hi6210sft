@@ -14,6 +14,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Audio
 PRODUCT_PACKAGES += audio.a2dp.default
 
@@ -23,6 +27,10 @@ PRODUCT_COPY_FILES += \
 # Chromium
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so
+
+# init
+PRODUCT_PACKAGES += \
+    p8litekirin
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -55,12 +63,26 @@ PRODUCT_PACKAGES += \
 	start-ssh \
 	uim \
 	UsbSpeedSwitch \
-	wpa_supplicant 	
+	wpa_supplicant
+
+# Charger
+PRODUCT_PACKAGES += \
+      charger_res_images 
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck \
+    make_ext4fs \
+    resize2fs \
+    setup_fs \
+    ext4_resize \
+    resize_ext4 \
+    superumount 	
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
-# Chromium
+# Ramdisk
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/ramdisk/init.5801.rc:root/init.5801.rc \
 	device/huawei/hi6210sft/ramdisk/init.6165.rc:root/init.6165.rc \
@@ -98,7 +120,7 @@ PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/ramdisk/ueventd.102173.rc:root/ueventd.102173.rc \
 	device/huawei/hi6210sft/ramdisk/ueventd.142782.rc:root/ueventd.142782.rc \
 	device/huawei/hi6210sft/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
-	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc
+	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc\
 
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32

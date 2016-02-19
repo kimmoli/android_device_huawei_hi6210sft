@@ -67,10 +67,6 @@ BOARD_SEPOLICY_DIRS += \
     device/huawei/hi6210sft/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-	file_contexts \
 	file.te \
     	genfs_contexts \
-	kernel.te \
-	property_contexts \
-	seapp_contexts \
-	service_contexts
+	kernel.te 

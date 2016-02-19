@@ -1,4 +1,3 @@
-$(call inherit-product, build/target/product/full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -59,12 +58,6 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
-
-# Ramdisk
-PRODUCT_COPY_FILES += \
-	device/huawei/hi6210sft/ramdisk/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
-	device/huawei/hi6210sft/ramdisk/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
-	device/huawei/hi6210sft/ramdisk/recovery.fstab:root/recovery.fstab
 
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32

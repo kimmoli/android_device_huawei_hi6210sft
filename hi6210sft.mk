@@ -131,6 +131,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
 
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/wifi/hostpad_hisi.conf:system/etc/wifi/hostpad_hisi.conf \
+	device/huawei/hi6210sft/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+	device/huawei/hi6210sft/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/huawei/hi6210sft/wifi/wpa_supplicant_hisi.conf:system/etc/wifi/wpa_supplicant_hisi.conf \
+	device/huawei/hi6210sft/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_hi6210sft
 PRODUCT_DEVICE := hi6210sft

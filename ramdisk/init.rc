@@ -17,6 +17,9 @@ import /init.protocol.rc
 import /init.trace.rc
 import /init.${ro.boardid.product}.rc
 
+# Include CM's extra init file
+import /init.cm.rc
+
 on early-init
     write /proc/1/oom_score_adj -1000
 

@@ -14,7 +14,7 @@ PRODUCT_COPY_FILES += \
 
 # init
 PRODUCT_PACKAGES += \
-    p8litekirin
+    	p8litekirin
 
 # Add openssh support for remote debugging and job submission
 PRODUCT_PACKAGES += \
@@ -41,17 +41,17 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-      charger_res_images 
+      	charger_res_images 
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    e2fsck \
-    make_ext4fs \
-    resize2fs \
-    setup_fs \
-    ext4_resize \
-    resize_ext4 \
-    superumount 	
+    	e2fsck \
+    	make_ext4fs \
+    	resize2fs \
+    	setup_fs \
+    	ext4_resize \
+    	resize_ext4 \
+    	superumount 	
 
 # Ramdisk
 PRODUCT_COPY_FILES += \

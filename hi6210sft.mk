@@ -55,12 +55,6 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
- 	device/huawei/hi6210sft/ramdisk/init.5801.rc:root/init.5801.rc \
- 	device/huawei/hi6210sft/ramdisk/init.6165.rc:root/init.6165.rc \
-  	device/huawei/hi6210sft/ramdisk/init.10106.rc:root/init.10106.rc \
-  	device/huawei/hi6210sft/ramdisk/init.51054.rc:root/init.51054.rc \
-  	device/huawei/hi6210sft/ramdisk/init.102173.rc:root/init.102173.rc \
-  	device/huawei/hi6210sft/ramdisk/init.142782.rc:root/init.142782.rc \
   	device/huawei/hi6210sft/ramdisk/init.audio.rc:root/init.audio.rc \
   	device/huawei/hi6210sft/ramdisk/init.chip.usb.rc:root/init.chip.usb.rc \
   	device/huawei/hi6210sft/ramdisk/init.connectivity.bcm43xx.rc:root/init.connectivity.bcm43xx.rc \
@@ -84,12 +78,6 @@ PRODUCT_COPY_FILES += \
   	device/huawei/hi6210sft/ramdisk/init.usb.rc:root/init.usb.rc \
   	device/huawei/hi6210sft/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
 	device/huawei/hi6210sft/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.5801.rc:root/ueventd.5801.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.6165.rc:root/ueventd.6165.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.10106.rc:root/ueventd.10106.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.51054.rc:root/ueventd.51054.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.102173.rc:root/ueventd.102173.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.142782.rc:root/ueventd.142782.rc \
   	device/huawei/hi6210sft/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
   	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc 
 

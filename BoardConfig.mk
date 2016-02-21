@@ -2,7 +2,7 @@ USE_CAMERA_STUB := true
 ANDROID_ENABLE_RENDERSCRIPT := true
 
 # inherit from the proprietary version
-#-include vendor/huawei/hi6210sft/BoardConfigVendor.mk
+-include vendor/huawei/hi6210sft/BoardConfigVendor.mk
 
 # 64 Bit Support
 ANDROID_64=true

@@ -2,13 +2,14 @@ USE_CAMERA_STUB := true
 ANDROID_ENABLE_RENDERSCRIPT := true
 
 # inherit from the proprietary version
--include vendor/huawei/hi6210sft/BoardConfigVendor.mk
+#-include vendor/huawei/hi6210sft/BoardConfigVendor.mk
 
 # 64 Bit Support
 ANDROID_64=true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_IS_64_BIT := true
 TARGET_USES_HISI_DTIMAGE := true
+TARGET_BOARD_SUFFIX := _64
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 
@@ -25,7 +26,6 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-TARGET_BOARD_SUFFIX := _64
 TARGET_CPU_CORTEX_A53 := true
 
 # Board
@@ -39,9 +39,13 @@ TARGET_BOOTLOADER_BOARD_NAME := p8litekirin
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # Kernel
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_PROVIDES_INIT_RC := true
-TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
-BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
+TARGET_KERNEL_SOURCE := kernel/huawei/hi6210sft
+TARGET_KERNEL_CONFIG := hisi_hi6210sft_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x02988000
@@ -68,10 +72,10 @@ TARGET_RECOVERY_DENSITY := xhdpi
 # TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/huawei/hi6210sft/sepolicy
+# BOARD_SEPOLICY_DIRS += \
+#     device/huawei/hi6210sft/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-	file.te \
-    	genfs_contexts \
-	kernel.te 
+# BOARD_SEPOLICY_UNION += \
+# 	file.te \
+#     	genfs_contexts \
+# 	kernel.te 

@@ -8,12 +8,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Audio
-# PRODUCT_PACKAGES += audio.a2dp.default
-
-# PRODUCT_COPY_FILES += \
-# 	device/huawei/hi6210sft/audio/audio_policy.conf:system/etc/audio_policy.conf
-
 # Chromium
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so
@@ -21,16 +15,6 @@ PRODUCT_COPY_FILES += \
 # init
 PRODUCT_PACKAGES += \
     p8litekirin
-
-# Media
-# PRODUCT_COPY_FILES += \
-# 	device/huawei/hi6210sft/media/media_codecs.xml:system/etc/media_codecs.xml \
-# 	device/huawei/hi6210sft/media/media_profiles.xml:system/etc/media_profiles.xml
-
-# PRODUCT_COPY_FILES += \
-#     	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml 
-#    	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml 
-#        frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml
 
 # Add openssh support for remote debugging and job submission
 PRODUCT_PACKAGES += \
@@ -68,9 +52,6 @@ PRODUCT_PACKAGES += \
     ext4_resize \
     resize_ext4 \
     superumount 	
-
-# Overlays
-# DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -120,19 +101,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
          ro.adb.secure=0
 
 PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
-
-# Wi-Fi
-# PRODUCT_PACKAGES += \
-#     hostapd_hisi.conf \
-#     wpa_supplicant \
-#     wpa_supplicant.conf
-
-# PRODUCT_COPY_FILES += \
-# 	device/huawei/hi6210sft/wifi/hostpad_hisi.conf:system/etc/wifi/hostpad_hisi.conf \
-# 	device/huawei/hi6210sft/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-# 	device/huawei/hi6210sft/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-# 	device/huawei/hi6210sft/wifi/wpa_supplicant_hisi.conf:system/etc/wifi/wpa_supplicant_hisi.conf \
-# 	device/huawei/hi6210sft/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

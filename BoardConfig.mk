@@ -63,13 +63,14 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_DENSITY := xhdpi
-# TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/twrp/twrp.fstab
-# DEVICE_RESOLUTION := 720x1280
-# TW_NO_USB_STORAGE := true
-# TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
-# TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
-# TW_MAX_BRIGHTNESS := 255
-# TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
+
+# Recovery TWRP
+DEVICE_RESOLUTION := 720x1280
+TW_NO_USB_STORAGE := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
+TW_MAX_BRIGHTNESS := 255
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
 
 # SELinux
 # BOARD_SEPOLICY_DIRS += \

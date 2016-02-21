@@ -77,7 +77,6 @@ PRODUCT_COPY_FILES += \
   	device/huawei/hi6210sft/ramdisk/init.trace.rc:root/init.trace.rc \
   	device/huawei/hi6210sft/ramdisk/init.usb.rc:root/init.usb.rc \
   	device/huawei/hi6210sft/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-	device/huawei/hi6210sft/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc \
   	device/huawei/hi6210sft/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
   	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc 
 

@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/huawei/p8litekirin/BoardConfigVendor.mk
+-include vendor/huawei/hi6210sft/BoardConfigVendor.mk
 
 # Architecture
 TARGET_ARCH := arm64
@@ -31,7 +31,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 -
 
 # Kernelconfig
 # Use this for prebuild
-TARGET_PREBUILT_KERNEL := device/huawei/p8litekirin/kernel
+TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
 # Use this for build from source (need declares)
 # TARGET_KERNEL_SOURCE := kernel/huawei
 # TARGET_KERNEL_CONFIG := aosp_p8litekirin_defconfig
@@ -58,4 +58,4 @@ TW_NO_USB_STORAGE := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
 TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/p8/graphics.c
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c

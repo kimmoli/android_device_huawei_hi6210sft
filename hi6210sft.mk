@@ -1,58 +1,66 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# The gps config appropriate for this device
+$(call inherit-product, device/common/gps/gps_us_supl.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
+
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+else
+	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
+LOCAL_PATH := device/huawei/hi6210sft
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+
 # Chromium
 PRODUCT_COPY_FILES += \
 	device/huawei/hi6210sft/chromium/libwebviewchromium.so:system/lib/libwebviewchromium.so
 
-# init
-PRODUCT_PACKAGES += \
-    	p8litekirin
+PRODUCT_COPY_FILES += \
+    	$(LOCAL_PATH)/recovery/ueventd.hi6210sft.rc:recovery/root/ueventd.hi6210sft.rc \
+    	$(LOCAL_PATH)/recovery/fstab.hi6210sft:recovery/root/fstab.hi6210sft \
+    	$(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
-# Add openssh support for remote debugging and job submission
-PRODUCT_PACKAGES += \
-	gatord \
-	gralloc.hikey \
-	hwclock \
-	ion-unit-tests \
-	iontest \
-	libion \
-	libGLES_android \
-	libGLES_mali \
-	libskia \
-	runtime_libart_default \
-	ssh \
-	sftp \
-	scp \
-	sshd \
-	ssh-keygen \
-	sshd_config \
-	start-ssh \
-	uim \
-	UsbSpeedSwitch \
-	wpa_supplicant
-
-# Charger
-PRODUCT_PACKAGES += \
-      	charger_res_images 
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    	e2fsck \
-    	make_ext4fs \
-    	resize2fs \
-    	setup_fs \
-    	ext4_resize \
-    	resize_ext4 \
-    	superumount 	
-
+PRODUCT_COPY_FILES += \
+   	 $(LOCAL_PATH)/recovery/system/bin/linker:recovery/root/system/bin/linker \
+   	 $(LOCAL_PATH)/recovery/system/lib/oamdrv.ko:recovery/root/system/lib/oamdrv.ko \
+    	 $(LOCAL_PATH)/recovery/system/lib/wifi.ko:recovery/root/system/lib/wifi.ko \
+	
+PRODUCT_COPY_FILES += \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/batt_level_scale.png:recovery/root/res/images/720x1280/batt_level_scale.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/batt_level_top.png:recovery/root/res/images/720x1280/batt_level_top.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/bg.png:recovery/root/res/images/720x1280/bg.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/empty_charge.png:recovery/root/res/images/720x1280/empty_charge.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/err_charge.png:recovery/root/res/images/720x1280/err_charge.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/full_charge.png:recovery/root/res/images/720x1280/full_charge.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_0.png:recovery/root/res/images/720x1280/number_0.png \
+    	$(LOCAL_PATH)/recovery/res/images/720x1280/number_1.png:recovery/root/res/images/720x1280/number_1.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_2.png:recovery/root/res/images/720x1280/number_2.png \
+    	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_3.png:recovery/root/res/images/720x1280/number_3.png \
+    	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_4.png:recovery/root/res/images/720x1280/number_4.png \
+    	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_5.png:recovery/root/res/images/720x1280/number_5.png \
+    	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_6.png:recovery/root/res/images/720x1280/number_6.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_7.png:recovery/root/res/images/720x1280/number_7.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_8.png:recovery/root/res/images/720x1280/number_8.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/number_9.png:recovery/root/res/images/720x1280/number_9.png \
+    	$(LOCAL_PATH)/recovery/res/images/720x1280/percent_5.png:recovery/root/res/images/720x1280/percent_5.png \
+    	$(LOCAL_PATH)/recovery/res/images/720x1280/percent_10.png:recovery/root/res/images/720x1280/percent_10.png \
+   	 $(LOCAL_PATH)/recovery/res/images/720x1280/percent_sign.png:recovery/root/res/images/720x1280/percent_sign.png
 
 
 # Set zygote config

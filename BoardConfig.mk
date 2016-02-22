@@ -46,11 +46,11 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_PROVIDES_INIT_RC := true
-TARGET_KERNEL_SOURCE := kernel/huawei/hi6210sft
-TARGET_KERNEL_CONFIG := hisi_hi6210sft_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/hi6210sft/kernel
+# TARGET_KERNEL_SOURCE := kernel/huawei/hi6210sft
+# TARGET_KERNEL_CONFIG := hisi_hi6210sft_defconfig
+# TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -64,25 +64,39 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+BOARD_TOUCH_RECOVERY :=
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_8888"
+BOARD_HAS_SDCARD_INTERNAL := true
+RECOVERY_FSTAB_VERSION := 2
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/hi6210sft/recovery/recovery_keys.c
+TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/recovery/recovery.fstab
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_INITRC := device/huawei/hi6210sft/recovery/init.rc
+
+
+# TWRP
+DEVICE_RESOLUTION := 720x1280
+HAVE_SELINUX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_DENSITY := xhdpi
-
-# Recovery TWRP
-DEVICE_RESOLUTION := 720x1280
-TW_NO_USB_STORAGE := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
-TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
+TW_HAS_MTP := true
+TW_ALWAYS_RMRF := true
 TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
+TW_FLASH_FROM_STORAGE := true
+TW_EXTERNAL_STORAGE_PATH := "/sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_INTERNAL_STORAGE_PATH := "/data/share/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/k3_fb.1/leds/lcd_backlight0/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
+
 
 # SELinux
-# BOARD_SEPOLICY_DIRS += \
-#     device/huawei/hi6210sft/sepolicy
+BOARD_SEPOLICY_DIRS += \
+     device/huawei/hi6210sft/sepolicy
 
-# BOARD_SEPOLICY_UNION += \
-# 	file.te \
-#     	genfs_contexts \
-# 	kernel.te 
+BOARD_SEPOLICY_UNION += \
+	file.te \
+    	genfs_contexts \
+ 	kernel.te 

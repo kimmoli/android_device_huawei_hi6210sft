@@ -14,13 +14,20 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_USES_HISI_DTIMAGE := true
 
 
+# ADB
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
+ADDITIONAL_DEFAULT_PROPERTIES += persist.sys.usb.config=mass_storage
+
 # Architecture
+ARCH_ARM_HAVE_NEON := true
+ARCH_ARM_HAVE_TLS_REGISTER:= true
+ARCH_ARM_HAVE_VFP := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := generic
-
 
 # 2nd Architecture
 TARGET_2ND_ARCH := arm
@@ -31,9 +38,14 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
 # Board
+BOARD_VENDOR := Huawei
 TARGET_BOARD_PLATFORM := BalongV8R1SFT
 TARGET_BOOTLOADER_BOARD_NAME := p8litekirin
+TARGET_BOARD_PLATFORM_GPU := mali-450mp
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RPC := true
+TARGET_NO_RADIOIMAGE := true
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -41,16 +53,34 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
 
+# Charger
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
 # Chromium
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
+
+# Graphics
+BOARD_EGL_CFG := device/huawei/hi6210sft/configs/egl.cfg
+USE_OPENGL_RENDERER := true
+
+# Hardware
+BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
+# HISI Product
+HISI_TARGET_PRODUCT := hi6210sft
 
 # Images
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Init
+TARGET_UNIFIED_DEVICE := true
+
 # Kernel
 TARGET_KERNEL_ARCH := arm64
-TARGET_PROVIDES_INIT_RC := true
+TARGET_PROVIDES_INIT_RC := false
 TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/hi6210sft/kernel
 # TARGET_KERNEL_SOURCE := kernel/huawei/hi6210sft
 # TARGET_KERNEL_CONFIG := hisi_hi6210sft_defconfig
@@ -60,6 +90,9 @@ BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x02988000
 
+# Liblight
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Partitionsizes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
@@ -68,38 +101,18 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-BOARD_HAS_SDCARD_INTERNAL := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/hi6210sft/recovery/recovery_keys.c
-BOARD_RECOVERY_SWIPE := true
-BOARD_TOUCH_RECOVERY :=
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-RECOVERY_FSTAB_VERSION := 2
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_8888"
-TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/recovery/recovery.fstab
-TARGET_RECOVERY_INITRC := device/huawei/hi6210sft/recovery/init.rc
+# TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/recovery.fstab
 
-# TWRP
+# TWRP Recovery
 DEVICE_RESOLUTION := 720x1280
-HAVE_SELINUX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_HAS_MTP := true
-TW_ALWAYS_RMRF := true
-TW_MAX_BRIGHTNESS := 255
-TW_FLASH_FROM_STORAGE := true
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_INTERNAL_STORAGE_PATH := "/data/share/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/k3_fb.1/leds/lcd_backlight0/brightness"
+TW_NO_USB_STORAGE := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
+TW_MAX_BRIGHTNESS := 255
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/hi6210sft/graphics.c
 
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-     device/huawei/hi6210sft/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-	file.te \
-    	genfs_contexts \
- 	kernel.te 
+# Webkit
+ENABLE_WEBGL := true
+TARGET_FORCE_CPU_UPLOAD := true

@@ -53,32 +53,7 @@ PRODUCT_PACKAGES += \
     	resize_ext4 \
     	superumount 	
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-  	device/huawei/hi6210sft/ramdisk/init.audio.rc:root/init.audio.rc \
-  	device/huawei/hi6210sft/ramdisk/init.chip.usb.rc:root/init.chip.usb.rc \
-  	device/huawei/hi6210sft/ramdisk/init.connectivity.bcm43xx.rc:root/init.connectivity.bcm43xx.rc \
-  	device/huawei/hi6210sft/ramdisk/init.connectivity.hi110x.rc:root/init.connectivity.hi110x.rc \
-  	device/huawei/hi6210sft/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
-  	device/huawei/hi6210sft/ramdisk/init.device.rc:root/init.device.rc \
-  	device/huawei/hi6210sft/ramdisk/init.environ.rc:root/init.environ.rc \
-  	device/huawei/hi6210sft/ramdisk/init.extmodem.rc:root/init.extmodem.rc \
-  	device/huawei/hi6210sft/ramdisk/init.hi6210sft.rc:root/init.hi6210sft.rc \
-  	device/huawei/hi6210sft/ramdisk/init.hisi.rc:root/init.hisi.rc \
-  	device/huawei/hi6210sft/ramdisk/init.manufacture.rc:root/init.manufacture.rc \
-  	device/huawei/hi6210sft/ramdisk/init.performance.rc:root/init.performance.rc \
-  	device/huawei/hi6210sft/ramdisk/init.platform.rc:root/init.platform.rc \
-  	device/huawei/hi6210sft/ramdisk/init.protocol.rc:root/init.protocol.rc \
-  	device/huawei/hi6210sft/ramdisk/init.rc:root/init.rc \
-  	device/huawei/hi6210sft/ramdisk/init:root/init \
-  	device/huawei/hi6210sft/ramdisk/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
-  	device/huawei/hi6210sft/ramdisk/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc \
-  	device/huawei/hi6210sft/ramdisk/init.tee.rc:root/init.tee.rc \
-  	device/huawei/hi6210sft/ramdisk/init.trace.rc:root/init.trace.rc \
-  	device/huawei/hi6210sft/ramdisk/init.usb.rc:root/init.usb.rc \
-  	device/huawei/hi6210sft/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
-  	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc 
+
 
 # Set zygote config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32

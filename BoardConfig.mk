@@ -58,3 +58,13 @@ TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd_backlight0/brightness"
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/bq_bci_battery.1/power_supply/Battery"
 TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/huawei/hi6210sft/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	file.te \
+	genfs_contexts \
+	init.te \
+	kernel.te

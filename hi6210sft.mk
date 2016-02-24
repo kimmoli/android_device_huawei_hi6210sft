@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
 # Dalvik
 $(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)
+PRODUCT_TAGS += dalvik.gc.type-precise
                   
 
 # Hi6210SFT Packages

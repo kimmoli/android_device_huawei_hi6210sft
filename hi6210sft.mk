@@ -53,7 +53,7 @@ PRODUCT_PACKAGES += \
 	ssh-keygen \
 	start-ssh \
 	uim \
-	uim-sysfs
+	uim-sysfs \
 	UsbSpeedSwitch \
 	VisualizationWallpapers \
 	wpa_supplicant

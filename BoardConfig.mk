@@ -53,6 +53,8 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Hardware
 BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft
+HISI_TARGET_PRODUCT := hi6210sft
+TARGET_BOARD_SUFFIX := _32
 
 # Kernel
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive

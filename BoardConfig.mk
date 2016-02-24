@@ -63,6 +63,9 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 -
 # Kernelconfig
 TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/kernel
 
+# Liblight
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Partitionsizes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864

@@ -23,6 +23,7 @@ lib/hw/audio.primary.hi6210sft.so
 lib/hw/camera.hi6210sft.so
 lib/hw/gps.hi110x.default.so
 lib/hw/gralloc.hi6210sft.so
+lib/hw/hwcomposer.default.so
 lib/hw/hwcomposer.hi6210sft.so
 lib/hw/keystore.hi6210sft.so
 lib/hw/memtrack.hi6210sft.so
@@ -102,6 +103,7 @@ lib64/hw/camera.hi6210sft.so
 lib64/hw/gps.hi110x.default.so
 lib64/hw/gps.hi6210sft.so
 lib64/hw/gralloc.hi6210sft.so
+lib64/hw/hwcomposer.default.so
 lib64/hw/hwcomposer.hi6210sft.so
 lib64/hw/keystore.hi6210sft.so
 lib64/hw/memtrack.hi6210sft.so

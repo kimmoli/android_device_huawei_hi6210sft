@@ -1,5 +1,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
@@ -27,11 +29,12 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 # Hi6210SFT Packages
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory \
+	fstab.hi6210sft \
+	gatord \
+	gralloc.hikey \
 	hwclock \
 	iontest \
 	ion-unit-tests \
-	gatord \
-	gralloc.hikey \
     	libion \
 	libc2dcolorconvert \
         libdashplayer \

@@ -58,6 +58,66 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers \
 	wpa_supplicant
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.manufacturer=HUAWEI \
+    ro.product.model=ALE-L21 \
+    ro.build.selinux=0 \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-meta=true \
+    media.stagefright.enable-scan=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-rtsp=true \
+    media.stagefright.enable-record=true \
+    net.rmnet0.dns1=8.8.8.8 \
+    net.rmnet0.dns2=8.8.4.4 \
+    net.dns1=8.8.8.8 \
+    net.dns2=8.8.4.4 \
+    wifi.interface=wlan0 \
+    ap.interface=wlan1 \
+    persist.sys.usb.config=mtp,adb \
+    ro.zygote.disable_gl_preload=1 \
+    ro.opengles.version=131072 \
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    debug.hwui.render_dirty_regions=false \
+    persist.radio.apm_sim_not_pwdn=1 \
+    ro.config.hw_flashless=true \
+    ro.config.modem_hsic=true \
+    ro.config.hisi_soc_type=true \
+    ro.config.hisi_rpt_mode=0 \
+    balong.debug.on=true \
+    ro.config.fm_type=libbcmfm_if \
+    ro.bt.bdaddr_path=/data/misc/bluedroid/macbt \
+    ro.thmodem.type=sprd \
+    ro.modem.type=6260 \
+    ril.gsm.deviceid=-1 \
+    ril.cdma.deviceid=-1 \
+    ril.gsm.rssi=-1 \
+    ril.cdma.rssi=-1 \
+    persist.sys.logsystem.neversend=0 \
+    modify_ram_show=true \
+    persist.sys.phb.enable=1 \
+    persist.sys.phb.debug.enable=1 \
+    persist.sys.actualpoweron=true \
+    persist.radio.apm_sim_not_pwdn=1 \
+    ro.config.incall_notify_mms=true \
+    ro.config.hw_allow_ums_and_mtp=true \
+    ro.camera.sound.forced=1 \
+    keyguard.no_require_sim=true \
+    ro.config.hw_dolby=true \
+    ro.dolbywithheadset.enable=1 \
+    ro.streaming.video.drs=true \
+    media.aac_51_output_enabled=true \
+    ro.config.vdf_apn_switch=true \
+    ro.config.hw_show_network_icon=true \
+    persist.telephony.mpdn=false \
+    ro.cellbroadcast.emergencyids=919,4371 \
+    ro.config.vm_prioritymode=2 \
+    ro.product.aac.softaac2ffmpeg=true \
+    ro.config.helix_enable=true \
+    af.resampler.quality=4 \
+    ro.config.widevine_level3=true \
+    drm.service.enabled=true
+
 # Zygote
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
 PRODUCT_PROPERTY_OVERRIDES += \

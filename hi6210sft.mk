@@ -44,6 +44,10 @@ PRODUCT_PACKAGES += libion
 # OpenSSh
 PRODUCT_PACKAGES += ssh sftp scp sshd ssh-keygen sshd_config start-ssh uim wpa_supplicant
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.hi6210sft
+
 # USB 
 PRODUCT_PACKAGES += UsbSpeedSwitch
 

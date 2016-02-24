@@ -33,6 +33,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Chromium
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
+# Hardware
+BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft
+
 # Kernel
 BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x07478000

@@ -46,6 +46,10 @@ BOARD_EGL_CFG := device/huawei/hi6210sft/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
 
+# Global CFlags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
 # Hardware
 BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft
 

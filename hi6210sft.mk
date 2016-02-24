@@ -23,17 +23,28 @@ $(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)
                   
 
-# Power HAL
+# Hi6210SFT Packages
 PRODUCT_PACKAGES += \
-	runtime_libart_default \
+	com.android.future.usb.accessory \
 	hwclock \
 	iontest \
 	ion-unit-tests \
 	gatord \
 	gralloc.hikey \
     	libion \
+	libc2dcolorconvert \
+        libdashplayer \
+	librs_jni \
+	libsrec_jni \
+	libbt-vendor \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	make_ext4fs \
+	minivold \
     	power.hi6210sft \
+	runtime_libart_default \
 	scp \
+	setup_fs \
 	sftp \
 	ssh \
 	sshd \
@@ -41,7 +52,9 @@ PRODUCT_PACKAGES += \
 	ssh-keygen \
 	start-ssh \
 	uim \
+	uim-sysfs
 	UsbSpeedSwitch \
+	VisualizationWallpapers \
 	wpa_supplicant
 
 # Zygote

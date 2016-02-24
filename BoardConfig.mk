@@ -36,6 +36,7 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 # EGL
 BOARD_EGL_CFG := device/huawei/hi6210sft/configs/egl.cfg
 USE_OPENGL_RENDERER := true
+TARGET_HARDWARE_3D := true
 
 # Hardware
 BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft

@@ -101,5 +101,5 @@ BOARD_SEPOLICY_UNION += \
 	netd.te \
 	rild.te \
 	system.te \
-	volt.te
+	vold.te
 

@@ -4,6 +4,10 @@ $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Art
 PRODUCT_RUNTIMES := runtime_libart_default
 

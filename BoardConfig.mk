@@ -64,7 +64,21 @@ BOARD_SEPOLICY_DIRS += \
     device/huawei/hi6210sft/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+	bluetooth.te \
+	debuggered.te \
+	device.te \
+	dhcp.te \
+	domain.te \
+	file_contexts \
 	file.te \
 	genfs_contexts \
+	healthd.te \
 	init.te \
-	kernel.te
+	init_shell.te \
+	kernel.te \
+	mediaserver.te \
+	netd.te \
+	rild.te \
+	system.te \
+	volt.te
+

@@ -1,0 +1,2 @@
+allow bluetooth default_prop:property_service set;
+

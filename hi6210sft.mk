@@ -8,9 +8,6 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Art
-PRODUCT_RUNTIMES := runtime_libart_default
-
 # Audio
 PRODUCT_COPY_FILES += \
      	device/huawei/hi6210sft/audio/audio_policy.conf:system/etc/audio_policy.conf
@@ -24,32 +21,28 @@ PRODUCT_COPY_FILES += \
 # Dalvik
 $(call inherit-product-if-exists, frameworks/base/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)
-
-# Gatord
-PRODUCT_PACKAGES += gatord
-
-# Grallock
-PRODUCT_PACKAGES += gralloc.hikey
-
-# HW Clock
-PRODUCT_PACKAGES += hwclock
-
-# ION tests
-PRODUCT_PACKAGES += iontest \
-                    ion-unit-tests
-
-# Libion for new double-buffering HDLCD driver
-PRODUCT_PACKAGES += libion
-
-# OpenSSh
-PRODUCT_PACKAGES += ssh sftp scp sshd ssh-keygen sshd_config start-ssh uim wpa_supplicant
+                  
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.hi6210sft
-
-# USB 
-PRODUCT_PACKAGES += UsbSpeedSwitch
+	runtime_libart_default \
+	hwclock \
+	iontest \
+	ion-unit-tests \
+	gatord \
+	gralloc.hikey \
+    	libion \
+    	power.hi6210sft \
+	scp \
+	sftp \
+	ssh \
+	sshd \
+	sshd_config \
+	ssh-keygen \
+	start-ssh \
+	uim \
+	UsbSpeedSwitch \
+	wpa_supplicant
 
 # Zygote
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32

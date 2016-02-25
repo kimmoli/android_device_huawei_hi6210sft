@@ -10,6 +10,53 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Ramdisk
+PRODUCT_COPY_FILES += \
+	device/generic/goldfish/fstab.goldfish:root/fstab.goldfish \
+	device/huawei/hi6210sft/ramdisk/init.5801.rc:root/init.5801.rc \
+	device/huawei/hi6210sft/ramdisk/init.6165.rc:root/init.6165.rc \
+	device/huawei/hi6210sft/ramdisk/init.10106.rc:root/init.10106.rc \
+	device/huawei/hi6210sft/ramdisk/init.51054.rc:root/init.51054.rc \
+	device/huawei/hi6210sft/ramdisk/init.102173.rc:root/init.102173.rc \
+	device/huawei/hi6210sft/ramdisk/init.142782.rc:root/init.142782.rc \
+	device/huawei/hi6210sft/ramdisk/init.audio.rc:root/init.audio.rc \
+	device/huawei/hi6210sft/ramdisk/init.chip.usb.rc:root/init.chip.usb.rc \
+	device/huawei/hi6210sft/ramdisk/init.connectivity.bcm43xx.rc:root/init.connectivity.bcm43xx.rc \
+	device/huawei/hi6210sft/ramdisk/init.connectivity.hi110x.rc:root/init.connectivity.hi110x.rc \
+	device/huawei/hi6210sft/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
+	device/huawei/hi6210sft/ramdisk/init.device.rc:root/init.device.rc \
+	device/huawei/hi6210sft/ramdisk/init.environ.rc:root/init.environ.rc \
+	device/huawei/hi6210sft/ramdisk/init.extmodem.rc:root/init.extmodem.rc \
+	device/huawei/hi6210sft/ramdisk/init.hi6210sft.rc:root/init.hi6210sft.rc \
+	device/huawei/hi6210sft/ramdisk/init.hisi.rc:root/init.hisi.rc \
+	device/huawei/hi6210sft/ramdisk/init.manufacture.rc:root/init.manufacture.rc \
+	device/huawei/hi6210sft/ramdisk/init.performance.rc:root/init.performance.rc \
+	device/huawei/hi6210sft/ramdisk/init.platform.rc:root/init.platform.rc \
+	device/huawei/hi6210sft/ramdisk/init.protocol.rc:root/init.protocol.rc \
+	device/huawei/hi6210sft/ramdisk/init.tee.rc:root/init.tee.rc \
+	device/huawei/hi6210sft/ramdisk/init.trace.rc:root/init.trace.rc \
+	device/huawei/hi6210sft/ramdisk/init.usb.rc:root/init.usb.rc \
+	device/huawei/hi6210sft/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
+	device/huawei/hi6210sft/ramdisk/init.zygote64_32.rc:root/init.zygote64_32.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.5801.rc:root/ueventd.5801.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.6165.rc:root/ueventd.6165.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.10106.rc:root/ueventd.10106.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.51054.rc:root/ueventd.51054.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.102173.rc:root/ueventd.102173.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.142782.rc:root/ueventd.142782.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
+	device/huawei/hi6210sft/ramdisk/ueventd.rc:root/ueventd.rc
+
+# Recovery
+PRODUCT_COPY_FILES += \
+	device/huawei/hi6210sft/recovery/agnsscontrol:system/bin/agnsscontrol \
+	device/huawei/hi6210sft/ramdisk/fstab.hi6210sft:recovery/root/fstab.hi6210sft \
+	device/huawei/hi6210sft/recovery/gnss_engine:system/bin/gnss_engine \
+	device/huawei/hi6210sft/recovery/hisi_connectivity.sh:system/bin/hisi_connectivity.sh \
+	device/huawei/hi6210sft/recovery/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
+	device/huawei/hi6210sft/recovery/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc  \
+	device/huawei/hi6210sft/recovery/octty:system/bin/octty
+
 # Audio
 PRODUCT_COPY_FILES += \
      	device/huawei/hi6210sft/audio/audio_policy.conf:system/etc/audio_policy.conf
@@ -29,7 +76,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 # Hi6210SFT Packages
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory \
-	fstab.hi6210sft \
 	gatord \
 	gralloc.hikey \
 	hwclock \
@@ -121,6 +167,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.widevine_level3=true \
     drm.service.enabled=true
 
+# NFC packages
+PRODUCT_PACKAGES += \
+    	libnfc-nci \
+    	libnfc_nci_jni \
+    	NfcNci \
+    	Tag \
+    	com.android.nfc_extras
+
+# NFCEE access control
+NFCEE_ACCESS_PATH := device/huawei/hi6210sft/nfc/nfcee_access.xml
+
+# NFC firmware
+PRODUCT_COPY_FILES += \
+    	$(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+    	device/huawei/hi6210sft/nfc/libnfc-brcm-alice.conf:system/etc/libnfc-brcm-alice.conf \
+    	device/huawei/hi6210sft/nfc/libnfc-nxp-alice.conf:system/etc/libnfc-nxp-alice.conf \
+    	device/huawei/hi6210sft/nfc/bcm2079xB4_firmware_20793.ncd:system/vendor/firmware/bcm2079xB4_firmware_20793.ncd \
+   	device/huawei/hi6210sft/nfc/bcm2079xB4_pre_firmware_20793.ncd:system/vendor/firmware/bcm2079xB4_pre_firmware_20793.ncd
+
+# NFC permissions
+PRODUCT_COPY_FILES += \
+   	device/huawei/hi6210sft/nfc/com.gsma.services.nfc.xml:system/etc/permissions/com.gsma.services.nfc.xml \
+    	frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    	frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+
 # Zygote
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -143,16 +215,6 @@ PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
         frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml)
 
 $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
-
-# Kernel
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/huawei/hi6210sft/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    	$(LOCAL_KERNEL):kernel
 
 $(call inherit-product, build/target/product/full.mk)
 

@@ -66,16 +66,6 @@ USE_OPENGL_RENDERER := true
 TARGET_BOARD_PLATFORM_GPU := mali-450mp
 TARGET_HARDWARE_3D := true
 
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-DONT_DEXPREOPT_PREBUILTS := true
-
 # Global CFlags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DDEFAULT_DRM_FB_WIDTH=720 -DDEFAULT_DRM_FB_HEIGHT=1280
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp 

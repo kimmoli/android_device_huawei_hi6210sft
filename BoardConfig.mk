@@ -30,7 +30,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_USES_64_BIT_BINDER := true
 else
 TARGET_BOARD_SUFFIX := _32
 TARGET_ARCH := arm
@@ -39,7 +38,6 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 endif
-
 
 # Audio
 TARGET_PROVIDES_LIBAUDIO := true
@@ -118,7 +116,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-
 
 # TWRP specific flags
 # if you dont want DEVICE_RESOLUTION use this

@@ -53,6 +53,12 @@
         <item>"9,1"</item>
     </string-array>
 
+    <!-- Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+
     <!-- Screen brightness when dozing -->
     <integer name="config_screenBrightnessDoze">17</integer>
 

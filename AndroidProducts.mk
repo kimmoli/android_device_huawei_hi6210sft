@@ -10,4 +10,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-$(LOCAL_DIR)/hikey.mk
+$(LOCAL_DIR)/hi6210sft.mk

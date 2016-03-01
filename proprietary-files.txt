@@ -66,10 +66,6 @@ lib/libfm_hal.so
 lib/libfm_interface.so
 lib/libfm_jni.so
 lib/libfm_volume.so
-lib/libGLES_trace.so
-lib/libGLESv1_CM.so
-lib/libGLESv2.so
-lib/libGLESv3.so
 lib/libgps_factory_test.so
 lib/libgps_factory_test_hi110x.so
 lib/libhardware.so
@@ -105,7 +101,6 @@ lib/libwpa_client_hisi.so
 
 # LIBS64
 lib64/drm/libdrmhwomavoneplugin.so
-lib64/egl/libGLES_android.so
 lib64/egl/libGLES_mali.so
 lib64/hw/bastet.hi6210sft.so
 lib64/hw/camera.hi6210sft.so
@@ -124,16 +119,11 @@ lib64/libbalong-ril-1.so
 lib64/libbt_factory_test.so
 lib64/libbt_factory_test_hi110x.so
 lib64/libconn_factory_test.so
-lib64/libEGL.so
 lib64/libETC1.so
 lib64/libfm_hal.so
 lib64/libfm_interface.so
 lib64/libfm_jni.so
 lib64/libfm_volume.so
-lib64/libGLES_trace.so
-lib64/libGLESv1_CM.so
-lib64/libGLESv2.so
-lib64/libGLESv3.so
 lib64/libgps_factory_test.so
 lib64/libgps_factory_test_hi110x.so
 lib64/libhardware.so

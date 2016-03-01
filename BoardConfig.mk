@@ -119,12 +119,15 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/recovery.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    	device/huawei/hi6210sft/sepolicy
 
-# Wifi
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-CONFIG_DRIVER_NL80211 := y
-CONFIG_DRIVER_WEXT :=y
-WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_SEPOLICY_UNION += \
+	file_contexts \
+	property_contexts \
+	seapp_contexts \
+	service_contexts
 
 # TWRP
 # DEVICE_RESOLUTION := 720x1280

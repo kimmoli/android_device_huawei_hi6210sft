@@ -1,5 +1,19 @@
 # BIN
 bin/surfaceflinger
+bin/chr_logd              
+xbin/watchlssd            
+bin/octty                 
+bin/oam_app               
+bin/hi110x_logd           
+bin/gnss_engine           
+bin/agnsscontrol          
+bin/supl20clientd         
+bin/agnsslog              
+bin/hi110x_except_logd    
+bin/set_log               
+bin/hisi_connectivity.sh  
+bin/wpa_supplicant_hisi   
+bin/hostapd_hisi          
 
 # ETC
 etc/media_codecs.xml

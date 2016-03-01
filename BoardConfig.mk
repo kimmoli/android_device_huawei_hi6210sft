@@ -88,7 +88,7 @@ TARGET_USE_PAN_DISPLAY := true
 
 # Kernel
 KERNEL_CONFIG = arch/arm64/configs/defconfig android/configs/android-base.cfg  android/configs/android-recommended.cfg
-BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 no_irq_affinity androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x02988000

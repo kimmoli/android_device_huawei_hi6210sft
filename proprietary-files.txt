@@ -4,12 +4,10 @@ bin/chr_logd
 xbin/watchlssd            
 bin/octty                 
 bin/oam_app               
-bin/hi110x_logd           
 bin/gnss_engine           
 bin/agnsscontrol          
 bin/supl20clientd         
 bin/agnsslog              
-bin/hi110x_except_logd    
 bin/set_log               
 bin/hisi_connectivity.sh  
 bin/wpa_supplicant_hisi   
@@ -31,7 +29,6 @@ etc/wifi/wpa_supplicant_overlay.conf
 
 # LIBS
 lib/drm/libdrmhwomavoneplugin.so
-lib/egl/libGLES_android.so
 lib/egl/libGLES_mali.so
 lib/hw/audio.primary.hi6210sft.so
 lib/hw/camera.hi6210sft.so
@@ -103,9 +100,7 @@ lib/libnfc_ndef.so
 lib/libOpenMAXAL.so
 lib/libOpenSLES.so
 lib/libservices.huawei.so
-lib/libwifi_factory_test.so
 lib/libwifi_factory_test_hi110x.so
-lib/libwpa_client.so
 lib/libwpa_client_hisi.so
 
 # LIBS64

@@ -73,11 +73,8 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 # EGL
 ANDROID_ENABLE_RENDERSCRIPT := true
 BOARD_EGL_CFG := device/huawei/hi6210sft/configs/egl.cfg
-BOARD_EGL_WORKAROUND_BUG_10194508 := true
-BOARD_USE_MHEAP_SCREENSHOT := true
 TARGET_BOARD_PLATFORM_GPU := mali-450mp
 TARGET_HARDWARE_3D := true
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 USE_OPENGL_RENDERER := true
 
 # Global CFlags
@@ -88,7 +85,6 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 BOARD_HAL_STATIC_LIBRARIES += libhealthd.hi6210sft
 HISI_TARGET_PRODUCT := hi6210sft
 TARGET_USE_PAN_DISPLAY := true
-
 
 # Kernel
 KERNEL_CONFIG = arch/arm64/configs/defconfig android/configs/android-base.cfg  android/configs/android-recommended.cfg

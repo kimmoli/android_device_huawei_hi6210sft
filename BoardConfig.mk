@@ -17,17 +17,12 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
 ADDITIONAL_DEFAULT_PROPERTIES += persist.sys.usb.config=mass_storage
 
 # Architecture
-ARCH_ARM_HAVE_NEON := true
-ARCH_ARM_HAVE_VFP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
-TARGET_ARCH_VARIANT_FPU := neon
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := generic
-
+TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon

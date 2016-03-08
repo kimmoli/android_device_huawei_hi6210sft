@@ -1,5 +1,5 @@
 bin/atcmdserver
-bin/netd
+bin/mediaserver
 bin/netcfg
 bin/dhcpcd
 bin/device_monitor
@@ -14,8 +14,6 @@ bin/mac_addr_normalization
 bin/rild
 lib64/egl/libGLES_mali.so
 lib/egl/libGLES_mali.so
-lib/libmediaplayerservice.so
-lib/libstagefright.so
 lib/libstagefright_foundation.so
 lib64/hw/gralloc.hi6210sft.so
 lib/hw/gralloc.hi6210sft.so
@@ -147,6 +145,6 @@ vendor/lib/libwvdrm_L3.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib64/libbt-vendor-hi110x.so
 vendor/framework/com.huawei.audioalgo.jar
-vendor/etc/audio_effects.con
+vendor/etc/audio_effects.conf
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd

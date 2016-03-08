@@ -7,5 +7,5 @@
 /dev/block/platform/hi_mci.0/by-name/boot       /boot       emmc      defaults        defaults
 /dev/block/platform/hi_mci.0/by-name/recovery   /recovery   emmc      defaults        defaults
 /dev/block/platform/hi_mci.0/by-name/cust       /cust       ext4      defaults        defaults
-/devices/platform/hi_mci.1/mmc_host/mmc1		/external_sd		vfat	defaults	oldmanaged=sdcard0:auto,noemulatedsd
+/devices/platform/hi_mci.1/mmc_host/mmc1	 /external_sd		vfat	defaults	voldmanaged=sdcard0:auto,noemulatedsd
 
